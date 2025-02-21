@@ -103,6 +103,5 @@ export const Railway_eligibility=[
         eligibility: "Degree in Engineering or a relevant discipline from a recognized university",
         AdditionalRequirements: "Document verification, medical fitness, and merit-based selection",
         Nationality: "The candidate must be a citizen of India"
-      },
-     
+},
 ]

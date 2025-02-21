@@ -11,9 +11,13 @@ var dotenv = require("dotenv");
 
 var app = express();
 
-
+require("dotenv").config();
 // Middleware setup
-app.use(cors());
+app.use(cors({
+    origin: FRONTEND_URL,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  }));
 app.use(bodyparser.json());
 app.use(logger('dev'));
 app.use(express.json());
