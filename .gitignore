@@ -1,1 +1,5 @@
 node_modules/
+backend/.env
+backend/node_modules
+teja-front-end/.env
+teja-front-end/node_modules
