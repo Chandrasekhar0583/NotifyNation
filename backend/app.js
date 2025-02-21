@@ -11,7 +11,7 @@ var dotenv = require("dotenv");
 
 var app = express();
 
-require(dotenv).config();
+dotenv.config();
 // Middleware setup
 
 const FRONTEND_URL = process.env.FRONTEND_URL;
