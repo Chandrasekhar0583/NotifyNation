@@ -1,5 +1,6 @@
 node_modules/
 backend/.env
+backend/vercel.json
 backend/node_modules
 teja-front-end/.env
 teja-front-end/node_modules
