@@ -13,6 +13,8 @@ var app = express();
 
 require("dotenv").config();
 // Middleware setup
+
+const FRONTEND_URL = process.env.FRONTEND_URL;
 app.use(cors({
     origin: FRONTEND_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
