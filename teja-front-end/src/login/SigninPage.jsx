@@ -10,7 +10,7 @@ const Login = ({ update }) => {
     const navigate = useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
-        axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/login`, { email, password })
+        axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/login`, { email, password })
             .then(res => {
                 // console.log(res.data)
                 const n = res.data

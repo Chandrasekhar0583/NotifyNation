@@ -20,7 +20,7 @@ const Signup = () => {
     const [colo,setColo] = useState("#1560BD")
     const verify=async(e)=>{
         e.preventDefault;
-        const status = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/verify`,{otp});
+        const status = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/verify`,{otp});
             if(status.data.message==="verified")
             {
                 setFlag(true);
@@ -36,7 +36,7 @@ const Signup = () => {
             else
             {
                 setMessage(" ")
-                const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/sendotp`, { "email":email });
+                const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/sendotp`, { "email":email });
                 console.log("Response:", response.data);
             }
     }
@@ -61,7 +61,7 @@ const Signup = () => {
         setError('');
         try {
 
-            const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/get`, {
+            const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/get`, {
                 name,
                 email,
                 password

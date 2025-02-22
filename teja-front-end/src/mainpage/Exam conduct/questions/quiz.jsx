@@ -13,7 +13,7 @@ export const Quiz = ({email}) => {
   const [science, setScience] = useState([]);
 
   useEffect(() => {
-    axios.get(`import.meta.env.VITE_REACT_APP_BACKEND/Subjects-data`)
+    axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND}/Subjects-data`)
       .then(res => {
         setEnglish(res.data[0]);
         setGeneralAwareness(res.data[1]);
@@ -198,7 +198,7 @@ export const Quiz = ({email}) => {
   
     try {
       console.log(email)
-      const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/validate-answers`, {"data":data,"email":email});
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/validate-answers`, {"data":data,"email":email});
       console.log('Answers validated:', response.data);
     } catch (error) {
       if (error.response) {

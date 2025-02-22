@@ -250,7 +250,7 @@ const Quiz = () => {
 
   // Function to handle final submission to backend
   // const handleFinalSubmit = () => {
-  //   axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/validate-answers`, { answers: selectedAnswers })
+  //   axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/validate-answers`, { answers: selectedAnswers })
   //     .then((response) => {
   //       const { score, results } = response.data;
   //       console.log('Score:', score);
@@ -273,7 +273,7 @@ const Quiz = () => {
     };
   
     try {
-      const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/validate-answers`, data);
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/validate-answers`, data);
       console.log('Answers validated:', response.data);
     } catch (error) {
       console.error('Error validating answers:', error);

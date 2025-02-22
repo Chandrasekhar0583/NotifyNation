@@ -74,7 +74,7 @@ const Applicationpdf = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get(`import.meta.env.VITE_REACT_APP_BACKEND/getUser/${registrationNumber}`)
+    axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND}/getUser/${registrationNumber}`)
       .then(response => {
         setUserData(response.data);
         setError('');
@@ -108,7 +108,7 @@ const downloadPDF = async () => {
     }
     const mail=userData.emailId;
    const all =userData
-      const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/upload-pdf`,formData, {
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/upload-pdf`,formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
             userData:JSON.stringify(all)

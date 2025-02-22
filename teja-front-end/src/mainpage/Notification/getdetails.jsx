@@ -10,7 +10,7 @@
 //   const examdata = data.find((eachExam) => eachExam.id === Id);
 //   const handleDownload = () => {
 //     const link = document.createElement('a');
-//     link.href = `import.meta.env.VITE_REACT_APP_BACKEND/api/download/${examdata.pdf_filename}`;
+//     link.href = `${import.meta.env.VITE_REACT_APP_BACKEND}/api/download/${examdata.pdf_filename}`;
 //     link.download = `${examdata.post_title}.pdf`;
 //     link.click();
 //   };
@@ -18,7 +18,7 @@
 //   const handleApplyClick = async (event) => {
 //     try {
 //         // Check if the user has already applied for this post
-//         const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/checkApplication`, {username: usrname, post: examdata.post_name });
+//         const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/checkApplication`, {username: usrname, post: examdata.post_name });
 
 //         if (response.data.alreadyApplied) {
 //             // Prevent navigation and show an alert
@@ -97,7 +97,7 @@ const Getdetails = ({ usrname }) => {
   useEffect(() => {
     const checkApplicationStatus = async () => {
       try {
-        const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/checkApplication`, {
+        const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/checkApplication`, {
           username: usrname,
           post: examdata.post_name
         });
@@ -116,7 +116,7 @@ const Getdetails = ({ usrname }) => {
   // Handle download function
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = `import.meta.env.VITE_REACT_APP_BACKEND/api/download/${examdata.pdf_filename}`;
+    link.href = `${import.meta.env.VITE_REACT_APP_BACKEND}/api/download/${examdata.pdf_filename}`;
     link.download = `${examdata.post_title}.pdf`;
     link.click();
   };

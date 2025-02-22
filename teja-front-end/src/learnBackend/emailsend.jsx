@@ -16,7 +16,7 @@ const Email = () => {
 
   const fun = () => {
     console.log(data)
-    axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/Email-sending`, data)
+    axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/Email-sending`, data)
       .then((res) => {
         console.log(res.data);
         setMessage(res.data.message);

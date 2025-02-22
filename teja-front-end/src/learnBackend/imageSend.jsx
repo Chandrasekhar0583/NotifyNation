@@ -6,7 +6,7 @@ const ImageSend = () => {
         const mydata = new FormData();
         mydata.append("file", data);
     
-        axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/upload`, mydata)  // Updated the port here
+        axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/upload`, mydata)  // Updated the port here
           .then(res => {
             console.log(res.data);
           })

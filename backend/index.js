@@ -6,7 +6,7 @@
     const cors = require('cors');
     const mongoose = require('mongoose');
     const bodyparser = require('body-parser');
-    const FirstRoutes = require("../Routes/FirstRoutes");
+    const Route = require("./Routes/FirstRoutes");
     var dotenv = require("dotenv");
 
     var index = express();
@@ -35,7 +35,7 @@
         console.error('MongoDB connection error:');
     })
     // Routes setup
-    index.use("/", FirstRoutes);
+    index.use("/",Route );
 
     // Fallback route for 404
     index.use(function(req, res, next) {

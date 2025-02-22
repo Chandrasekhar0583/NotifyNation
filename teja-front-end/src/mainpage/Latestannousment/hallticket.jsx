@@ -34,7 +34,7 @@ function HallTicket() {
     const navigate = useNavigate();
 console.log(examDetails)
     useEffect(() => {
-        axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/candidate`,examDetails)
+        axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/candidate`,examDetails)
             .then(response => {
                 const data = response.data[0];
                 setHallTicketDetails({

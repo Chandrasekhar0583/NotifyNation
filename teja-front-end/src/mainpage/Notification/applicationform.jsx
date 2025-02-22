@@ -161,7 +161,7 @@ const Applicationform = ({usrname}) => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/getUserData/${username}`);
+                const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/getUserData/${username}`);
                 const data = response.data;
     
                 if (data) {
@@ -284,7 +284,7 @@ const Applicationform = ({usrname}) => {
         // e.preventDefault(); // Prevent form default behavior
     
         try {
-            const response = await axios.post(`import.meta.env.VITE_REACT_APP_BACKEND/registerUser`, CompeleteDetails, {
+            const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND}/registerUser`, CompeleteDetails, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
