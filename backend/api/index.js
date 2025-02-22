@@ -6,7 +6,7 @@
     const cors = require('cors');
     const mongoose = require('mongoose');
     const bodyparser = require('body-parser');
-    const FirstRoutes = require("./Routes/FirstRoutes");
+    const FirstRoutes = require("../Routes/FirstRoutes");
     var dotenv = require("dotenv");
 
     var index = express();
@@ -27,7 +27,7 @@
     index.use(cookieParser());
     index.use(express.static(path.join(__dirname, 'public')));
 
-    mongoose.connect(process.env.SMTP_link)
+    mongoose.connect(process.env.MONGO_URI)
     .then((res) => {
         console.log('DB connected successfully...');
     })
@@ -46,7 +46,7 @@
     index.use(function(err, req, res, next) {
         res.status(err.status || 500).json({
             message: err.message,
-            error: req.index.get('env') === 'development' ? err : {}
+            error: req.app.get('env') === 'development' ? err : {}
         });
     });
 
