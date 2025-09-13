@@ -50,8 +50,11 @@
         });
     });
 
-    index.listen(5000, function() {
-        console.log("Server started on port 5000");
-    });
+   const PORT = process.env.PORT || 5000;
+
+index.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server started on port ${PORT}`);
+});
+
 
     module.exports = index;
