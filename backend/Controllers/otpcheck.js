@@ -23,8 +23,16 @@ const SendOtp = async(req,res)=>{
    const mailOptions = {
     from: process.env.SMTP_MAIL,
     to: email,
-    subject: "OTP",
-    text: `${num}`
+   subject: "Notify Nation - Verification OTP",
+  text: `Dear User,
+
+Your verification OTP for signing up with Notify Nation is: ${num}
+
+Please use this OTP to complete your registration process. 
+The OTP is valid for a limited time.
+
+Thank you,
+Team Notify Nation`
   };
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
