@@ -39,8 +39,7 @@ const SendOtp = async(req,res)=>{
       Regards, <br/>
       <strong>Team Notify Nation</strong>
     </p>
-  </div>
-`;
+  </div>`;
 
 const mailOptions = {
   from: process.env.SMTP_MAIL,
