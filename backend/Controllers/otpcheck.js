@@ -41,24 +41,24 @@ const SendOtp = async(req,res)=>{
     </p>
   </div>`;
 
-// const mailOptions = {
-//   from: process.env.SMTP_MAIL,
-//   to: email,
-//   subject: "Notify Nation - Verification OTP",
-//   html: otpHTML
-// };
+const mailOptions = {
+  from: process.env.SMTP_MAIL,
+  to: email,
+  subject: "Notify Nation - Verification OTP",
+  html: otpHTML
+};
 
-   const mailOptions = {
-    from: process.env.SMTP_MAIL,
-    to: email,
-    subject: "OTP",
-    text: `${num}`
-  };
+  //  const mailOptions = {
+  //   from: process.env.SMTP_MAIL,
+  //   to: email,
+  //   subject: "OTP",
+  //   text: `${num}`
+  // };
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
-      return res.status(500).json({ error: "Failed to send email" });
+      return res.status(500).json({ error: "Failed to send email" , err});
     } else {
-      return res.status(200).json({ message: "OTP sent successfully" });
+      return res.status(200).json({ message: "OTP sent successfully" ,info });
     }
   });
 }
